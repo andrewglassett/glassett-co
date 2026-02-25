@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Payment System for Artists — Andrew Glassett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/case-study.css" />
+  <style>
+    /* ── STRATEGY CARDS ── */
+    .strategy-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .strategy-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border-top: 4px solid var(--teal);
+    }
+
+    .strategy-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .strategy-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* ── COMPETITIVE ANALYSIS ── */
+    .comp-visual {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .comp-visual-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--cream);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed var(--ink-80);
+      margin-bottom: 20px;
+    }
+
+    .comp-visual-placeholder span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      opacity: 0.3;
+    }
+
+    .comp-caption {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
+      opacity: 0.6;
+      font-style: italic;
+    }
+
+    /* ── PERSONA CARDS ── */
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .persona-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+
+    .persona-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--teal) 0%, #1e7a6f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .persona-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .persona-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.65;
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* ── LEARNING CARDS ── */
+    .learning-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .learning-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+
+    .learning-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--coral);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .learning-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .learning-card p,
+    .learning-card ul {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.65;
+      margin: 0;
+    }
+
+    .learning-card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 12px;
+    }
+
+    .learning-card li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .learning-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .strategy-cards { grid-template-columns: 1fr; }
+      .persona-grid { grid-template-columns: 1fr; }
+      .learning-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Andrew Glassett</a>
+    <ul class="nav-links">
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+    <a href="/#contact" class="nav-availability">
+      <div class="float-dot"></div>
+      <span>Available now</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cs-hero">
+    <a href="/" class="cs-back">Back to work</a>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Product Design</span>
+      <span class="cs-tag enterprise">Enterprise</span>
+    </div>
+
+    <h1 class="cs-title">Building a Payment System for Artists</h1>
+
+    <p class="cs-subtitle">
+      A new royalty splitting and payment product for The Orchard, Sony Music's distribution platform,
+      helping labels manage complex artist payments at scale.
+    </p>
+
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <h4>Role</h4>
+        <p>Lead Product Designer</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Client</h4>
+        <p>Sony Music · The Orchard</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Timeline</h4>
+        <p>12 Months</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Status</h4>
+        <p>Shipped</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">The Challenge</div>
+    <h2>Keeping customers through better tools</h2>
+    <p>
+      The Orchard needed to retain customers in a competitive market. They developed a three-pronged strategy:
+    </p>
+
+    <div class="strategy-cards">
+      <div class="strategy-card">
+        <span class="strategy-num">Strategy 01</span>
+        <p>Provide better business intelligence</p>
+      </div>
+      <div class="strategy-card">
+        <span class="strategy-num">Strategy 02</span>
+        <p>Better tools for managing content</p>
+      </div>
+      <div class="strategy-card">
+        <span class="strategy-num">Strategy 03</span>
+        <p>Accounting tools that set us apart from competitors</p>
+      </div>
+    </div>
+
+    <div class="cs-quote" style="margin-top: 48px;">
+      <p>How might we provide accounting tools that help our customers better run their business?</p>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE ANALYSIS -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">Market Analysis</div>
+    <h2>Finding the gap</h2>
+    <p>
+      The Orchard was competitive in most areas, except for one critical feature: paying out royalties.
+      This was a glaring miss in an otherwise strong product offering.
+    </p>
+
+    <div class="comp-visual">
+      <div class="comp-visual-placeholder">
+        <span>Competitive Analysis Matrix</span>
+      </div>
+      <p class="comp-caption">We were matching most of the market, but had one glaring miss.</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">User Research</div>
+    <h2>Understanding the workflow</h2>
+    <p>
+      I recruited users to understand how they currently manage royalties, gathering detailed information
+      about their business size, number of artists, statement formats, and calculation methods.
+    </p>
+    <p>
+      The research confirmed our hypothesis: royalty management was the most important pain point for
+      our customers.
+    </p>
+
+    <div class="cs-quote">
+      <p>"Being able to split our net revenue by release to pay band members would be great."</p>
+    </div>
+
+    <div class="cs-quote">
+      <p>"Really looking forward to see how you include a royalty tool which would take away tons of work,
+      as we still do royalties by hand for each product. :)"</p>
+    </div>
+  </section>
+
+  <!-- PERSONAS -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">Pain Points</div>
+    <h2>Four distinct user needs</h2>
+    <p>
+      Through interviews with defined personas, we identified specific pain points across different
+      types of users in the music distribution ecosystem.
+    </p>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-icon">🏢</div>
+        <h3>Record Label</h3>
+        <p>"Accounting is getting complex and doesn't provide returns. More technology is needed,
+        and I'm not great at that."</p>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-icon">📡</div>
+        <h3>Distributor</h3>
+        <p>"I can do the technology, but customers don't know me as an authority when it comes
+        to accounting."</p>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-icon">🎤</div>
+        <h3>Artist</h3>
+        <p>"We are spending too much time and money figuring out how much we are owed and who
+        we have to pay."</p>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-icon">🎵</div>
+        <h3>Collaborator</h3>
+        <p>"It takes forever for me to get paid, and I'm not sure it's clear that I'm getting
+        the right amount."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISUAL DESIGN -->
+  <section class="cs-section">
+    <div class="cs-section-label">Solution</div>
+    <h2>Designing the payment flow</h2>
+    <p style="max-width: 700px;">
+      After gathering user feedback, I designed an interface that balanced complexity with usability.
+      The system needed to handle intricate royalty calculations while remaining accessible to users
+      with varying technical expertise.
+    </p>
+
+    <div class="visual-grid">
+      <div class="visual-item">
+        <div class="visual-placeholder">
+          <span>Onboarding Experience</span>
+        </div>
+        <p class="visual-caption">A friendly welcome was important, as the setup process was complex and we needed to engender trust</p>
+      </div>
+
+      <div class="visual-item">
+        <div class="visual-placeholder">
+          <span>Revenue Splitting Interface</span>
+        </div>
+        <p class="visual-caption">Customers decided how much revenue would be split across collaborators</p>
+      </div>
+
+      <div class="visual-item">
+        <div class="visual-placeholder">
+          <span>Payment Generation</span>
+        </div>
+        <p class="visual-caption">After a payment period has ended, the customer generates a payment to send out to collaborators</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">Results</div>
+    <h2>What we learned from launch</h2>
+    <p>
+      The product shipped successfully, but adoption was lower than expected. This led to important
+      insights about product-market fit and the real-world constraints our users faced.
+    </p>
+
+    <div class="learning-cards">
+      <div class="learning-card">
+        <span class="learning-num">Learning 01</span>
+        <h3>Adoption was lower than expected</h3>
+        <ul>
+          <li>Customers with small numbers of collaborators may not need this product</li>
+          <li>Some labels pay upon receipt of invoice and don't need batch payments</li>
+          <li>Labels have existing payment methods they're happy with — reluctant to change</li>
+        </ul>
+      </div>
+
+      <div class="learning-card">
+        <span class="learning-num">Learning 02</span>
+        <h3>Payment integration was the blocker</h3>
+        <ul>
+          <li>Confusion around the Wise (payment processor) integration</li>
+          <li>Lack of understanding of the funding process</li>
+          <li>Some territories not supported by Wise</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LESSONS -->
+  <section class="cs-section dark">
+    <div class="cs-section-label">Takeaways</div>
+    <h2>What I learned</h2>
+    <p>
+      This project taught me that even with strong user research and a well-designed solution,
+      success depends on understanding the full context of adoption — including existing workflows,
+      change management, and technical integration points.
+    </p>
+
+    <div class="lesson-cards">
+      <div class="lesson-card">
+        <span class="lesson-num">Lesson 01</span>
+        <p>
+          User research should extend beyond feature needs to understand workflow inertia and
+          switching costs. People need compelling reasons to change established processes.
+        </p>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-num">Lesson 02</span>
+        <p>
+          Third-party integrations can make or break product adoption. Payment processors,
+          in particular, need to support all user territories and be easy to understand.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Andrew Glassett</div>
+    <p class="footer-copy">© 2025 Andrew Glassett. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="https://linkedin.com/in/andrewglassett" target="_blank">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

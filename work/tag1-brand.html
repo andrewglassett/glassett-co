@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extending a Brand Across Every Format — Andrew Glassett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/case-study.css" />
+  <style>
+    /* ── SITUATION CARD ── */
+    .situation-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border-left: 4px solid var(--teal);
+      margin-top: 40px;
+    }
+
+    .situation-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .situation-card p {
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* ── SCOPE GRID ── */
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .scope-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      border-top: 3px solid var(--teal);
+    }
+
+    .scope-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .scope-item h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .scope-item p {
+      font-size: 13px;
+      opacity: 0.6;
+      margin: 0;
+    }
+
+    /* ── VISUAL ITEM GRID-2 ── */
+    .visual-item.grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .visual-item.grid-2 .visual-placeholder {
+      aspect-ratio: 3/4;
+    }
+
+    /* ── IMPACT CARD (teal) ── */
+    .impact-card {
+      background: linear-gradient(135deg, var(--teal) 0%, #1e7a6f 100%);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .scope-grid { grid-template-columns: 1fr; }
+      .visual-item.grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Andrew Glassett</a>
+    <ul class="nav-links">
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+    <a href="/#contact" class="nav-availability">
+      <div class="float-dot"></div>
+      <span>Available now</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cs-hero">
+    <a href="/" class="cs-back">Back to work</a>
+
+    <div class="cs-tags">
+      <span class="cs-tag brand">Brand</span>
+      <span class="cs-tag">Marketing</span>
+    </div>
+
+    <h1 class="cs-title">Extending a Brand Across Every Format</h1>
+
+    <p class="cs-subtitle">
+      As Tag1 Consulting's embedded design partner, I extended their brand across print, digital,
+      and environmental formats — delivering 8+ deliverables in 6 months.
+    </p>
+
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <h4>Role</h4>
+        <p>Design Lead</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Client</h4>
+        <p>Tag1 Consulting</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Timeline</h4>
+        <p>6 Months</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Status</h4>
+        <p>Ongoing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATION -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">The Situation</div>
+    <h2>A brand without a system</h2>
+    <p>
+      Tag1 Consulting is a global Drupal development agency with 100+ team members across 20+ countries.
+      They're known for solving complex technical challenges — performance, scalability, infrastructure —
+      but their marketing materials didn't reflect that expertise.
+    </p>
+    <p>
+      They had recently redesigned their brand identity, but lacked internal design resources to extend
+      it consistently across the formats they needed: conference materials, marketing collateral, web pages,
+      and sales support.
+    </p>
+
+    <div class="situation-card">
+      <h3>The Challenge</h3>
+      <p>
+        How do you take a newly designed brand and make it work across every format a global agency needs —
+        from ebooks to conference booths to elevator clings — without a full-time designer on staff?
+      </p>
+    </div>
+  </section>
+
+  <!-- SCOPE -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">The Scope</div>
+    <h2>Eight formats, one designer</h2>
+    <p>
+      I embedded with Tag1 as their design partner, delivering brand extensions across print, digital,
+      and environmental formats. Here's what I created:
+    </p>
+
+    <div class="scope-grid">
+      <div class="scope-item">
+        <span class="scope-icon">📖</span>
+        <h4>Ebooks (3)</h4>
+        <p>Technical content for lead gen</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">🎪</span>
+        <h4>Conference Booth</h4>
+        <p>DrupalCon Chicago 2026</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">📄</span>
+        <h4>One-Sheet</h4>
+        <p>Service overview collateral</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">🏢</span>
+        <h4>Elevator Cling</h4>
+        <p>Office environmental branding</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">🌐</span>
+        <h4>Website Pages</h4>
+        <p>Brand extensions on tag1.com</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">💳</span>
+        <h4>Business Cards</h4>
+        <p>Team identity materials</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">🔌</span>
+        <h4>Charging Stations</h4>
+        <p>Conference giveaway wraps</p>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">📊</span>
+        <h4>Sales Support</h4>
+        <p>Presentations & materials</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL WORK -->
+  <section class="cs-section">
+    <div class="cs-section-label">Digital</div>
+    <div class="visual-header">
+      <h3>Ebooks & Marketing Content</h3>
+      <p>
+        Tag1 produces technical content to establish thought leadership in the Drupal and infrastructure space.
+        I designed three ebooks using two distinct visual motifs while maintaining brand consistency.
+      </p>
+    </div>
+
+    <div class="visual-grid">
+      <div class="visual-item">
+        <div class="visual-placeholder">
+          <span>Ebook 1: Beyond the Magic — How LLMs Actually Work</span>
+        </div>
+        <p class="visual-caption">Technical deep-dive with custom diagrams and infographics</p>
+      </div>
+
+      <div class="visual-item grid-2">
+        <div>
+          <div class="visual-placeholder">
+            <span>Ebook 2</span>
+          </div>
+        </div>
+        <div>
+          <div class="visual-placeholder">
+            <span>Ebook 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINT WORK -->
+  <section class="cs-section">
+    <div class="cs-section-label">Print</div>
+    <div class="visual-header">
+      <h3>Collateral & Brand Materials</h3>
+      <p>
+        Print materials needed to work at multiple scales — from business cards to large-format booth graphics —
+        while maintaining readability and brand impact.
+      </p>
+    </div>
+
+    <div class="visual-grid">
+      <div class="visual-item">
+        <div class="visual-placeholder">
+          <span>One-Sheet Sales Collateral</span>
+        </div>
+        <p class="visual-caption">Service overview for sales conversations</p>
+      </div>
+
+      <div class="visual-item grid-2">
+        <div>
+          <div class="visual-placeholder">
+            <span>Business Cards</span>
+          </div>
+        </div>
+        <div>
+          <div class="visual-placeholder">
+            <span>Additional Print</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENVIRONMENTAL WORK -->
+  <section class="cs-section">
+    <div class="cs-section-label">Environmental</div>
+    <div class="visual-header">
+      <h3>Conference & Office Branding</h3>
+      <p>
+        Tag1's biggest brand moment is DrupalCon — the industry's premier conference. I designed their complete
+        booth presence including backdrop, charging station wraps, and supporting materials.
+      </p>
+    </div>
+
+    <div class="visual-grid">
+      <div class="visual-item">
+        <div class="visual-placeholder">
+          <span>DrupalCon Chicago 2026 Booth Design</span>
+        </div>
+        <p class="visual-caption">Large-format backdrop and conference presence</p>
+      </div>
+
+      <div class="visual-item grid-2">
+        <div>
+          <div class="visual-placeholder">
+            <span>Charging Station Wraps</span>
+          </div>
+        </div>
+        <div>
+          <div class="visual-placeholder">
+            <span>Elevator Cling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="cs-section narrow">
+    <div class="cs-section-label">Impact</div>
+    <h2>The results</h2>
+    <p>
+      By embedding as Tag1's design partner, I delivered consistent brand execution across every format they
+      needed — without the overhead of a full-time hire.
+    </p>
+
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-value">8+</div>
+        <div class="impact-label">Formats delivered</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-value">6mo</div>
+        <div class="impact-label">Timeline</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-value">1</div>
+        <div class="impact-label">Designer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LESSONS -->
+  <section class="cs-section dark">
+    <div class="cs-section-label">Takeaways</div>
+    <h2>What I learned</h2>
+    <p>
+      This project reinforced the value of embedded design partnerships for agencies. They don't need a
+      full-time designer — they need someone who can jump between formats, deliver fast, and maintain
+      brand consistency without constant oversight.
+    </p>
+
+    <div class="lesson-cards">
+      <div class="lesson-card">
+        <span class="lesson-num">Lesson 01</span>
+        <p>
+          Brand consistency doesn't come from rigid rules — it comes from understanding the core visual
+          language well enough to adapt it across wildly different formats.
+        </p>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-num">Lesson 02</span>
+        <p>
+          Dev agencies need design partners who can context-switch quickly. One day it's an ebook,
+          the next it's a conference booth. That versatility is the value.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Andrew Glassett</div>
+    <p class="footer-copy">© 2025 Andrew Glassett. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="https://linkedin.com/in/andrewglassett" target="_blank">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
