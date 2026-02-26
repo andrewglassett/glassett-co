@@ -49,14 +49,13 @@
   <section class="brands">
     <p class="brands-label">Brands I've designed for</p>
     <div class="brands-row">
-      <span class="brand-item">Sony Music</span>
-      <span class="brand-item">Vimeo</span>
-      <span class="brand-item">Angi</span>
-      <span class="brand-item">Walmart</span>
-      <span class="brand-item">Alteryx</span>
-      <span class="brand-item">Keurig</span>
-      <span class="brand-item">Lego</span>
-      <span class="brand-item">Tag1</span>
+      <img class="brand-item" src="images/logos/sony.svg" alt="Sony Music" />
+      <img class="brand-item" src="images/logos/walmart.svg" alt="Walmart" />
+      <img class="brand-item" src="images/logos/vimeo.svg" alt="Vimeo" />
+      <img class="brand-item" src="images/logos/angi.svg" alt="Angi" />
+      <img class="brand-item" src="images/logos/intel.svg" alt="Intel" />
+      <img class="brand-item" src="images/logos/Lego.svg" alt="Lego" />
+      <img class="brand-item" src="images/logos/tag1.svg" alt="Tag1" />
     </div>
   </section>
 
@@ -76,7 +75,7 @@
         agency. Client UX work, internal brand extensions, conference materials, sales support.
         This is the work I was built for.
       </p>
-      <a href="/about" class="btn-secondary">Read my full story</a>
+      <!-- <a href="/about" class="btn-secondary">Read my full story</a> -->
     </div>
 
     <div class="about-visual fade-up">
@@ -102,8 +101,8 @@
           </div>
         </div>
       </div>
-      <div class="about-badge">Open to new work →</div>
-    </div>
+      <!-- <div class="about-badge">Open to new work →</div>
+    </div> -->
   </section>
 
   <!-- SERVICES -->
@@ -179,7 +178,7 @@
         <div class="section-label">Selected Work</div>
         <h2 class="section-headline">The range, not the highlight reel.</h2>
       </div>
-      <a href="/work" class="btn-secondary">View all work</a>
+      <!-- <a href="/work" class="btn-secondary">View all work</a> -->
     </div>
 
     <div class="work-grid">
@@ -278,27 +277,32 @@
     </div>
 
     <div class="fade-up">
-      <div class="contact-form">
+      <div class="form-success" id="form-success">
+        <p>Thanks for reaching out — I'll be in touch soon.</p>
+      </div>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/andrewglassett@gmail.com" method="POST">
         <div class="form-row">
           <div class="form-field">
-            <label>Name</label>
-            <input type="text" placeholder="Your name" />
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
           </div>
           <div class="form-field">
-            <label>Company</label>
-            <input type="text" placeholder="Your company" />
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company" />
           </div>
         </div>
         <div class="form-field">
-          <label>Email</label>
-          <input type="email" placeholder="your@email.com" />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
         </div>
         <div class="form-field">
-          <label>What do you need?</label>
-          <textarea placeholder="Tell me about your design gap..."></textarea>
+          <label for="message">What do you need?</label>
+          <textarea id="message" name="message" placeholder="Tell me about your design gap..."></textarea>
         </div>
-        <button class="btn-primary" style="border:none; cursor:pointer; width:fit-content;">Send Message →</button>
-      </div>
+        <!-- Honeypot field to catch spam bots -->
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:fit-content;">Send Message →</button>
+      </form>
     </div>
   </section>
 

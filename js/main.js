@@ -63,3 +63,39 @@ document.querySelectorAll('.services-grid, .work-grid').forEach(grid => {
     card.style.transitionDelay = `${i * 80}ms`;
   });
 });
+
+// Contact form — async submit with custom success message
+const contactForm = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(contactForm);
+    const submitBtn = contactForm.querySelector('[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message →';
+        alert('Something went wrong. Please try emailing me directly at andrewglassett@gmail.com.');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message →';
+      alert('Something went wrong. Please try emailing me directly at andrewglassett@gmail.com.');
+    }
+  });
+}
