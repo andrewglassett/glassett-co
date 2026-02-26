@@ -53,13 +53,15 @@
     .comp-visual-placeholder {
       width: 100%;
       aspect-ratio: 16/9;
-      background: var(--cream);
       border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px dashed var(--ink-80);
+      overflow: hidden;
       margin-bottom: 20px;
+    }
+
+    .comp-visual-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .comp-visual-placeholder span {
@@ -276,7 +278,7 @@
 
     <div class="comp-visual">
       <div class="comp-visual-placeholder">
-        <span>Competitive Analysis Matrix</span>
+        <img src="../../images/comp-analysis.webp" alt="Competitive Analysis Matrix" />
       </div>
       <p class="comp-caption">We were matching most of the market, but had one glaring miss.</p>
     </div>
@@ -358,21 +360,21 @@
     <div class="visual-grid">
       <div class="visual-item">
         <div class="visual-placeholder">
-          <span>Onboarding Experience</span>
+          <img src="../../images/comp-analysis.webp" alt="Onboarding Experience" />
         </div>
         <p class="visual-caption">A friendly welcome was important, as the setup process was complex and we needed to engender trust</p>
       </div>
 
       <div class="visual-item">
         <div class="visual-placeholder">
-          <span>Revenue Splitting Interface</span>
+          <img src="../../images/comp-analysis.webp" alt="Revenue Splitting Interface" />
         </div>
         <p class="visual-caption">Customers decided how much revenue would be split across collaborators</p>
       </div>
 
       <div class="visual-item">
         <div class="visual-placeholder">
-          <span>Payment Generation</span>
+          <img src="../../images/comp-analysis.webp" alt="Payment Generation" />
         </div>
         <p class="visual-caption">After a payment period has ended, the customer generates a payment to send out to collaborators</p>
       </div>

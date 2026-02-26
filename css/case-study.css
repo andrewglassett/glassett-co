@@ -226,12 +226,7 @@
 .visual-placeholder {
   width: 100%;
   aspect-ratio: 16/9;
-  background: var(--white);
   border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed var(--ink-80);
   overflow: hidden;
 }
 
