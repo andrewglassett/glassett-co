@@ -217,20 +217,33 @@
   margin-top: 48px;
 }
 
-.visual-item {
+.comp-visual {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin-top: 40px;
+  text-align: center;
 }
 
-.visual-placeholder {
+.comp-visual.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comp-visual.grid-2 .comp-visual-placeholder {
+  aspect-ratio: 3/4;
+}
+
+.comp-visual-placeholder {
   width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-.visual-placeholder span {
+.comp-visual-placeholder span {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -238,7 +251,7 @@
   opacity: 0.3;
 }
 
-.visual-placeholder img {
+.comp-visual-placeholder img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -325,4 +338,5 @@
   .cs-section { padding: 60px 24px; }
   .lesson-cards { grid-template-columns: 1fr; }
   .impact-grid { grid-template-columns: 1fr; }
+  .comp-visual.grid-2 { grid-template-columns: 1fr; }
 }

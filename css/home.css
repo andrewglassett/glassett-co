@@ -533,19 +533,27 @@
 }
 
 .thumb-tag1 {
-  background: linear-gradient(135deg, var(--ink) 0%, #1a3540 100%);
+  background-image: url('../images/homepage/tag1-featured-image.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .thumb-walmart {
-  background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+  background-image: url('../images/homepage/walmart-featured-image.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .thumb-sony {
-  background: linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+  background-image: url('../images/homepage/sony-featured-image.png');
+  background-size: cover;
+  background-position: center;
 }
 
-.thumb-vimeo {
-  background: linear-gradient(135deg, #E9C46A 0%, #F4A261 100%);
+.thumb-apqc {
+  background-image: url('../images/homepage/apqc-featured-image.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .work-card-thumb-label {

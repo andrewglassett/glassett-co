@@ -70,18 +70,7 @@
       margin: 0;
     }
 
-    /* ── VISUAL ITEM GRID-2 ── */
-    .visual-item.grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .visual-item.grid-2 .visual-placeholder {
-      aspect-ratio: 3/4;
-    }
-
-    /* ── IMPACT CARD (teal) ── */
+/* ── IMPACT CARD (teal) ── */
     .impact-card {
       background: linear-gradient(135deg, var(--teal) 0%, #1e7a6f 100%);
       border-radius: var(--radius-lg);
@@ -92,7 +81,6 @@
 
     @media (max-width: 900px) {
       .scope-grid { grid-template-columns: 1fr; }
-      .visual-item.grid-2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -237,21 +225,21 @@
     </div>
 
     <div class="visual-grid">
-      <div class="visual-item">
-        <div class="visual-placeholder">
-          <img src="../../images/comp-analysis.webp" alt="Ebook 1: Beyond the Magic — How LLMs Actually Work" />
+      <div class="comp-visual">
+        <div class="comp-visual-placeholder">
+          <img src="../../images/tag1/D7.png" alt="Ebook 1" />
         </div>
         <p class="visual-caption">Technical deep-dive with custom diagrams and infographics</p>
       </div>
 
-      <div class="visual-item grid-2">
+      <div class="comp-visual grid-2">
         <div>
-          <div class="visual-placeholder">
+          <div class="comp-visual-placeholder">
             <img src="../../images/comp-analysis.webp" alt="Ebook 2" />
           </div>
         </div>
         <div>
-          <div class="visual-placeholder">
+          <div class="comp-visual-placeholder">
             <img src="../../images/comp-analysis.webp" alt="Ebook 3" />
           </div>
         </div>
@@ -271,21 +259,21 @@
     </div>
 
     <div class="visual-grid">
-      <div class="visual-item">
-        <div class="visual-placeholder">
+      <div class="comp-visual">
+        <div class="comp-visual-placeholder">
           <img src="../../images/comp-analysis.webp" alt="One-Sheet Sales Collateral" />
         </div>
         <p class="visual-caption">Service overview for sales conversations</p>
       </div>
 
-      <div class="visual-item grid-2">
+      <div class="comp-visual grid-2">
         <div>
-          <div class="visual-placeholder">
+          <div class="comp-visual-placeholder">
             <img src="../../images/comp-analysis.webp" alt="Business Cards" />
           </div>
         </div>
         <div>
-          <div class="visual-placeholder">
+          <div class="comp-visual-placeholder">
             <img src="../../images/comp-analysis.webp" alt="Additional Print" />
           </div>
         </div>
@@ -305,22 +293,27 @@
     </div>
 
     <div class="visual-grid">
-      <div class="visual-item">
-        <div class="visual-placeholder">
+      <div class="comp-visual">
+        <div class="comp-visual-placeholder">
           <img src="../../images/comp-analysis.webp" alt="DrupalCon Chicago 2026 Booth Design" />
         </div>
         <p class="visual-caption">Large-format backdrop and conference presence</p>
       </div>
 
-      <div class="visual-item grid-2">
+      <div class="comp-visual">
         <div>
-          <div class="visual-placeholder">
-            <img src="../../images/comp-analysis.webp" alt="Charging Station Wraps" />
+          <div class="comp-visual-placeholder">
+            <img src="../../images/tag1/charging1.png" alt="Charging Station Wraps" />
           </div>
         </div>
         <div>
-          <div class="visual-placeholder">
-            <img src="../../images/comp-analysis.webp" alt="Elevator Cling" />
+          <div class="comp-visual-placeholder">
+            <img src="../../images/tag1/charging2.png" alt="Charging Station Wraps" />
+          </div>
+        </div>
+        <div>
+          <div class="comp-visual-placeholder">
+            <img src="../../images/tag1/elevator.png" alt="Elevator Cling" />
           </div>
         </div>
       </div>
