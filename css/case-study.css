@@ -231,7 +231,7 @@
 .comp-visual.grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 36px;
 }
 
 .comp-visual.grid-2 .comp-visual-placeholder {
@@ -251,7 +251,8 @@
   opacity: 0.3;
 }
 
-.comp-visual-placeholder img {
+.comp-visual-placeholder img,
+.comp-visual-placeholder video {
   width: 100%;
   height: 100%;
   object-fit: cover;
